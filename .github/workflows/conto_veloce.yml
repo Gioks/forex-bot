@@ -1,0 +1,59 @@
+name: Conto veloce azioni
+
+on:
+  schedule:
+    - cron: "20 23 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: conto-veloce
+  cancel-in-progress: false
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      VA_DATA_DIR: data
+      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Scarica il repository
+        run: |
+          git clone --branch "$GITHUB_REF_NAME" "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" repo
+
+      - name: Installa le librerie
+        working-directory: repo
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install --quiet yfinance pandas numpy requests
+
+      - name: Crea il conto se non esiste ancora
+        working-directory: repo
+        run: |
+          mkdir -p data
+          if [ ! -f data/stock_account.json ]; then
+            .venv/bin/python stock_account.py init --cash 10000
+          fi
+
+      - name: Aggiorna il conto
+        working-directory: repo
+        run: .venv/bin/python stock_account.py update --notify
+
+      - name: Salva lo stato
+        working-directory: repo
+        run: |
+          git config user.name "conto-veloce-bot"
+          git config user.email "conto-demo@users.noreply.github.com"
+          git add data/stock_account.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Conto veloce aggiornato $(date -u +%F)"
+            for i in 1 2 3 4; do
+              git pull --rebase origin "$GITHUB_REF_NAME" && git push && break
+              sleep 10
+            done
+          fi
