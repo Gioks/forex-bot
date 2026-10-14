@@ -1,0 +1,43 @@
+# Esegue live_bot.py sul conto DEMO IG ogni giorno feriale dopo la chiusura di Wall Street.
+# Le credenziali vanno inserite in Settings > Secrets and variables > Actions del repository.
+name: live-bot
+
+on:
+  schedule:
+    - cron: "30 21 * * 1-5"     # 21:30 UTC = 23:30 in Italia d'estate, 22:30 d'inverno
+  workflow_dispatch:             # avvio manuale dalla scheda Actions
+
+permissions:
+  contents: write                # per salvare live_log.jsonl nel repository
+
+concurrency:
+  group: live-bot
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Bot
+        # --sim = conto virtuale senza IG. Togliere --sim quando il login IG demo funziona.
+        run: python live_bot.py --sim
+        env:
+          IG_API_KEY: ${{ secrets.IG_API_KEY }}
+          IG_USERNAME: ${{ secrets.IG_USERNAME }}
+          IG_PASSWORD: ${{ secrets.IG_PASSWORD }}
+          IG_ACCOUNT_ID: ${{ secrets.IG_ACCOUNT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      - name: Salva il registro delle decisioni
+        if: always()
+        run: |
+          git config user.name "live-bot"
+          git config user.email "live-bot@users.noreply.github.com"
+          for f in live_log.jsonl sim_state.json; do if [ -f "$f" ]; then git add "$f"; fi; done
+          git diff --cached --quiet || (git commit -m "registro live bot" && git push)

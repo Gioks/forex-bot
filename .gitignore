@@ -1,0 +1,8 @@
+.env
+*.env
+last_signals.json
+paper_state.json
+paper_synthetic.json
+paper_log.txt
+sim_log.txt
+__pycache__/
