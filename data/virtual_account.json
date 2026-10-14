@@ -1,0 +1,82 @@
+{
+ "created": "2026-10-14 23:24",
+ "start_cash": 10000.0,
+ "cash": 95.05000000000086,
+ "positions": {
+  "EWT": {
+   "value": 1980.0,
+   "ref_date": "2026-10-14"
+  },
+  "EWY": {
+   "value": 1980.0,
+   "ref_date": "2026-10-14"
+  },
+  "EWZ": {
+   "value": 1980.0,
+   "ref_date": "2026-10-14"
+  },
+  "XLE": {
+   "value": 1980.0,
+   "ref_date": "2026-10-14"
+  },
+  "XLK": {
+   "value": 1980.0,
+   "ref_date": "2026-10-14"
+  }
+ },
+ "trades": [
+  {
+   "date": "2026-10-14",
+   "ticker": "EWT",
+   "side": "COMPRA",
+   "amount": 1980.0,
+   "cost": 0.99,
+   "why": "rotazione mensile: entra in top-5"
+  },
+  {
+   "date": "2026-10-14",
+   "ticker": "EWY",
+   "side": "COMPRA",
+   "amount": 1980.0,
+   "cost": 0.99,
+   "why": "rotazione mensile: entra in top-5"
+  },
+  {
+   "date": "2026-10-14",
+   "ticker": "EWZ",
+   "side": "COMPRA",
+   "amount": 1980.0,
+   "cost": 0.99,
+   "why": "rotazione mensile: entra in top-5"
+  },
+  {
+   "date": "2026-10-14",
+   "ticker": "XLE",
+   "side": "COMPRA",
+   "amount": 1980.0,
+   "cost": 0.99,
+   "why": "rotazione mensile: entra in top-5"
+  },
+  {
+   "date": "2026-10-14",
+   "ticker": "XLK",
+   "side": "COMPRA",
+   "amount": 1980.0,
+   "cost": 0.99,
+   "why": "rotazione mensile: entra in top-5"
+  }
+ ],
+ "snapshots": [
+  {
+   "date": "2026-10-14",
+   "equity": 9995.05,
+   "spy": 10000.0,
+   "ew": 10000.0
+  }
+ ],
+ "last_rebalance_month": "2026-10",
+ "start_date": "2026-10-14",
+ "peak": 10000.0,
+ "halted": false,
+ "halt_reason": ""
+}
