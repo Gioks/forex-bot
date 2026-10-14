@@ -1,0 +1,4 @@
+Conto demo simulato - versione cloud (GitHub Actions)
+Ogni giorno feriale, dopo la chiusura di Wall Street, GitHub esegue virtual_account.py update:
+aggiorna il conto virtuale, ribilancia a inizio mese e salva lo stato in data/virtual_account.json.
+Nessun ordine reale, nessun denaro vero. Non e' un consiglio finanziario.
