@@ -36,20 +36,27 @@ jobs:
         working-directory: repo
         run: |
           mkdir -p data
-          if [ ! -f data/stock_account.json ]; then
-            .venv/bin/python stock_account.py init --cash 10000
-          fi
+          for v in base trend riskw; do
+            f=data/stock_account.json
+            [ "$v" != "base" ] && f=data/stock_account_$v.json
+            if [ ! -f "$f" ]; then
+              .venv/bin/python stock_account.py init --cash 10000 --variant $v
+            fi
+          done
 
       - name: Aggiorna il conto
         working-directory: repo
-        run: .venv/bin/python stock_account.py update --notify
+        run: |
+          .venv/bin/python stock_account.py update --notify --variant base
+          .venv/bin/python stock_account.py update --variant trend || echo "sfidante trend non aggiornato"
+          .venv/bin/python stock_account.py update --variant riskw || echo "sfidante riskw non aggiornato"
 
       - name: Salva lo stato
         working-directory: repo
         run: |
           git config user.name "conto-veloce-bot"
           git config user.email "conto-demo@users.noreply.github.com"
-          git add data/stock_account.json
+          git add data/stock_account*.json
           if ! git diff --cached --quiet; then
             git commit -m "Conto veloce aggiornato $(date -u +%F)"
             for i in 1 2 3 4; do
