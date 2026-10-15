@@ -1,0 +1,49 @@
+name: Raccolta notizie
+
+on:
+  schedule:
+    - cron: "10 0,6,12,18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: raccolta-notizie
+  cancel-in-progress: false
+
+jobs:
+  raccogli:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      VA_DATA_DIR: data
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Scarica il repository
+        run: |
+          git clone --branch "$GITHUB_REF_NAME" "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" repo
+
+      - name: Installa le librerie
+        working-directory: repo
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install --quiet requests
+
+      - name: Raccogli i titoli
+        working-directory: repo
+        run: .venv/bin/python news_cloud.py
+
+      - name: Salva i titoli
+        working-directory: repo
+        run: |
+          git config user.name "raccolta-notizie-bot"
+          git config user.email "conto-demo@users.noreply.github.com"
+          git add data/news
+          if ! git diff --cached --quiet; then
+            git commit -m "Notizie raccolte $(date -u +%F-%H)"
+            for i in 1 2 3 4; do
+              git pull --rebase origin "$GITHUB_REF_NAME" && git push && break
+              sleep 10
+            done
+          fi
