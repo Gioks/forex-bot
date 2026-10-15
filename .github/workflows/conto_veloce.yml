@@ -36,7 +36,7 @@ jobs:
         working-directory: repo
         run: |
           mkdir -p data
-          for v in base trend riskw; do
+          for v in base trend riskw nostop; do
             f=data/stock_account.json
             [ "$v" != "base" ] && f=data/stock_account_$v.json
             if [ ! -f "$f" ]; then
@@ -50,6 +50,7 @@ jobs:
           .venv/bin/python stock_account.py update --notify --variant base
           .venv/bin/python stock_account.py update --variant trend || echo "sfidante trend non aggiornato"
           .venv/bin/python stock_account.py update --variant riskw || echo "sfidante riskw non aggiornato"
+          .venv/bin/python stock_account.py update --variant nostop || echo "riferimento nostop non aggiornato"
 
       - name: Salva lo stato
         working-directory: repo
