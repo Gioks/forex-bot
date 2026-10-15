@@ -28,11 +28,15 @@ import stock_universe as su
 import virtual_account as va            # riuso: valore posizioni, operazioni, chiusura, Telegram
 
 DATA_DIR = Path(os.environ.get("VA_DATA_DIR") or (Path.home() / "forex_data"))
-STATE_FILE = "stock_account.json"
+VARIANT = "base"            # base = conto veloce originale; trend / riskw = conti sfidanti
+VARIANTS = ("base", "trend", "riskw")
+TREND_DAYS = 200            # trend: se l'S&P 500 e' sotto la sua media a 200 giorni, tutto in contanti
+VOL_DAYS = 60               # riskw: peso inverso alla volatilita' degli ultimi 60 giorni
+W_CAP = 0.30                # riskw: massimo 30% su un titolo
 
 
 def state_path():
-    return DATA_DIR / STATE_FILE
+    return DATA_DIR / ("stock_account.json" if VARIANT == "base" else f"stock_account_{VARIANT}.json")
 
 
 def load_state():
@@ -89,12 +93,29 @@ def rebalance(state, A, e, s, tag):
         state["last_rebalance_week"] = tag
         return
     cand = [c for c in A.columns if c != su.BENCH]
+    if VARIANT == "trend":
+        bench = A[su.BENCH]
+        if s >= TREND_DAYS - 1 and bench.iloc[s] < bench.iloc[s - TREND_DAYS + 1:s + 1].mean():
+            for tk, v in vals.items():
+                va._trade(state, date, tk, -v, va.mb.COST * v, "filtro di tendenza: S&P 500 sotto la media a 200 giorni")
+            state["positions"] = {}
+            state["last_rebalance_week"] = tag
+            return
     S = (A[cand].iloc[s] / A[cand].iloc[s - su.LOOKBACK] - 1)
     S = S[A[cand].iloc[e].notna()].dropna().sort_values(ascending=False)     # serve un prezzo valido anche all'esecuzione
     chosen = list(S.index[:su.TOP_N])
     if len(chosen) < su.TOP_N:
         return                                                               # dati insufficienti: non opera
-    target = {tk: equity * va.INVEST_FRAC / len(chosen) for tk in chosen}
+    if VARIANT == "riskw":
+        vol = A[chosen].iloc[s - VOL_DAYS:s + 1].pct_change().std().replace(0, np.nan).dropna()
+        if len(vol) == len(chosen):
+            w = (1 / vol) / (1 / vol).sum()
+            w = w.clip(upper=W_CAP)
+            target = {tk: equity * va.INVEST_FRAC * float(w[tk]) for tk in chosen}
+        else:
+            target = {tk: equity * va.INVEST_FRAC / len(chosen) for tk in chosen}
+    else:
+        target = {tk: equity * va.INVEST_FRAC / len(chosen) for tk in chosen}
     for tk in sorted(set(vals) | set(target)):
         delta = target.get(tk, 0.0) - vals.get(tk, 0.0)
         if abs(delta) < va.MIN_TRADE:
@@ -176,7 +197,7 @@ def update(state, A):
 
 
 def build_report(state, A=None):
-    L = ["CONTO DEMO VELOCE - AZIONI GLOBALI (simulato, non sono soldi veri)"]
+    L = [f"CONTO DEMO VELOCE - AZIONI GLOBALI [{VARIANT}] (simulato, non sono soldi veri)"]
     sc = state["start_cash"]
     if state["start_date"] is None:
         L.append(f"Saldo iniziale {sc:,.2f} USD. Nessuna operazione ancora.")
@@ -207,7 +228,7 @@ def build_report(state, A=None):
 
 
 def fetch_start(state):
-    s = datetime.now() - timedelta(days=200)
+    s = datetime.now() - timedelta(days=420)
     if state.get("start_date"):
         s = min(s, pd.Timestamp(state["start_date"]).to_pydatetime() - timedelta(days=60))
     return s.strftime("%Y-%m-%d")
@@ -224,7 +245,9 @@ if __name__ == "__main__":
     p.add_argument("--force", action="store_true")
     p.add_argument("--dry", action="store_true")
     p.add_argument("--notify", action="store_true")
+    p.add_argument("--variant", choices=VARIANTS, default="base")
     a = p.parse_args()
+    VARIANT = a.variant
 
     if a.mode == "init":
         if state_path().exists() and not a.force:
