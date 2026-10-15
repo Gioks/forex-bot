@@ -1,0 +1,82 @@
+{
+ "created": "2026-10-15 20:15",
+ "start_cash": 10000.0,
+ "cash": 95.05000000000086,
+ "positions": {
+  "8035.T": {
+   "value": 1980.0,
+   "ref_date": "2026-10-15"
+  },
+  "9983.T": {
+   "value": 1980.0,
+   "ref_date": "2026-10-15"
+  },
+  "AMD": {
+   "value": 1980.0,
+   "ref_date": "2026-10-15"
+  },
+  "COST": {
+   "value": 1980.0,
+   "ref_date": "2026-10-15"
+  },
+  "SHOP.TO": {
+   "value": 1980.0,
+   "ref_date": "2026-10-15"
+  }
+ },
+ "trades": [
+  {
+   "date": "2026-10-15",
+   "ticker": "8035.T",
+   "side": "COMPRA",
+   "amount": 1980.0,
+   "cost": 0.99,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-10-15",
+   "ticker": "9983.T",
+   "side": "COMPRA",
+   "amount": 1980.0,
+   "cost": 0.99,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-10-15",
+   "ticker": "AMD",
+   "side": "COMPRA",
+   "amount": 1980.0,
+   "cost": 0.99,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-10-15",
+   "ticker": "COST",
+   "side": "COMPRA",
+   "amount": 1980.0,
+   "cost": 0.99,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-10-15",
+   "ticker": "SHOP.TO",
+   "side": "COMPRA",
+   "amount": 1980.0,
+   "cost": 0.99,
+   "why": "rotazione settimanale: entra in top-5"
+  }
+ ],
+ "snapshots": [
+  {
+   "date": "2026-10-15",
+   "equity": 9995.05,
+   "spy": 10000.0,
+   "ew": 10000.0
+  }
+ ],
+ "last_rebalance_week": "2026-10-12",
+ "start_date": "2026-10-15",
+ "peak": 10000.0,
+ "halted": false,
+ "halt_reason": ""
+}
