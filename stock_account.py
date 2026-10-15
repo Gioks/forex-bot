@@ -28,8 +28,10 @@ import stock_universe as su
 import virtual_account as va            # riuso: valore posizioni, operazioni, chiusura, Telegram
 
 DATA_DIR = Path(os.environ.get("VA_DATA_DIR") or (Path.home() / "forex_data"))
-VARIANT = "base"            # base = conto veloce originale; trend / riskw = conti sfidanti
-VARIANTS = ("base", "trend", "riskw")
+VARIANT = "base"            # base = conto veloce; trend / riskw = sfidanti; nostop = riferimento SENZA stop-loss
+VARIANTS = ("base", "trend", "riskw", "nostop")
+STOP_LOSS = 0.08            # stop (tutti i conti tranne nostop): vende un titolo se perde l'8% dal prezzo di acquisto; nessuno stop finche' guadagna
+COOLDOWN_DAYS = 28          # dopo l'uscita il titolo non viene ricomprato per 4 settimane
 TREND_DAYS = 200            # trend: se l'S&P 500 e' sotto la sua media a 200 giorni, tutto in contanti
 VOL_DAYS = 60               # riskw: peso inverso alla volatilita' degli ultimi 60 giorni
 W_CAP = 0.30                # riskw: massimo 30% su un titolo
@@ -92,6 +94,7 @@ def rebalance(state, A, e, s, tag):
         va.liquidate(state, A, e, f"blocco: perdita oltre {va.MAX_DD_STOP:.0%} dal massimo")
         state["last_rebalance_week"] = tag
         return
+    old_entry = {tk: p.get("entry_date", p["ref_date"]) for tk, p in state["positions"].items()}
     cand = [c for c in A.columns if c != su.BENCH]
     if VARIANT == "trend":
         bench = A[su.BENCH]
@@ -103,6 +106,9 @@ def rebalance(state, A, e, s, tag):
             return
     S = (A[cand].iloc[s] / A[cand].iloc[s - su.LOOKBACK] - 1)
     S = S[A[cand].iloc[e].notna()].dropna().sort_values(ascending=False)     # serve un prezzo valido anche all'esecuzione
+    if VARIANT != "nostop":
+        cd = state.get("cooldown", {})
+        S = S.drop([t for t, until in cd.items() if until > date and t in S.index])
     chosen = list(S.index[:su.TOP_N])
     if len(chosen) < su.TOP_N:
         return                                                               # dati insufficienti: non opera
@@ -128,7 +134,27 @@ def rebalance(state, A, e, s, tag):
             state["positions"][tk] = {"value": target[tk], "ref_date": date}
         else:
             state["positions"].pop(tk, None)
+    if VARIANT != "nostop":
+        for tk, p in state["positions"].items():
+            p["entry_date"] = old_entry.get(tk, date)
     state["last_rebalance_week"] = tag
+
+
+def apply_stops(state, A, i, notes):
+    """Controllo giornaliero: vende i titoli con perdita >= STOP_LOSS dal prezzo di acquisto."""
+    date = A.index[i].strftime("%Y-%m-%d")
+    for tk, p in list(state["positions"].items()):
+        ed = p.get("entry_date", p["ref_date"])
+        a_now, a_in = A[tk].iloc[i], A[tk].iloc[va.idx_of(A, ed)]
+        if np.isnan(a_now) or np.isnan(a_in) or a_in == 0:
+            continue
+        loss = float(a_now / a_in - 1)
+        if loss <= -STOP_LOSS:
+            v = va.pos_value(A, tk, p, i)
+            va._trade(state, date, tk, -v, va.mb.COST * v, f"stop-loss: {loss:.1%} dal prezzo di acquisto")
+            state["positions"].pop(tk, None)
+            state.setdefault("cooldown", {})[tk] = (A.index[i] + timedelta(days=COOLDOWN_DAYS)).strftime("%Y-%m-%d")
+            notes.append(f"STOP-LOSS su {tk}: {loss:.1%} dal prezzo di acquisto, venduto alla chiusura del {date}")
 
 
 def wtag(p):
@@ -174,6 +200,8 @@ def update(state, A):
             if state["halted"]:
                 break
 
+    if VARIANT != "nostop" and not state["halted"]:
+        apply_stops(state, A, last, notes)
     equity, _ = va.equity_at(state, A, last)
     state["peak"] = max(state["peak"], equity)
     if not state["halted"] and equity < state["peak"] * (1 - va.MAX_DD_STOP):
