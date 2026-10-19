@@ -1,27 +1,32 @@
 {
  "created": "2026-10-14 23:52",
  "start_cash": 10000.0,
- "cash": 95.05000000000086,
+ "cash": 92.01250062701524,
  "positions": {
-  "8035.T": {
-   "value": 1980.0,
-   "ref_date": "2026-10-15"
-  },
   "9983.T": {
-   "value": 1980.0,
-   "ref_date": "2026-10-15"
-  },
-  "AMD": {
-   "value": 1980.0,
-   "ref_date": "2026-10-15"
-  },
-  "COST": {
-   "value": 1980.0,
-   "ref_date": "2026-10-15"
+   "value": 1938.3908170841896,
+   "ref_date": "2026-10-19",
+   "entry_date": "2026-10-15"
   },
   "SHOP.TO": {
-   "value": 1980.0,
-   "ref_date": "2026-10-15"
+   "value": 1938.3908170841896,
+   "ref_date": "2026-10-19",
+   "entry_date": "2026-10-15"
+  },
+  "INFY": {
+   "value": 1938.3908170841896,
+   "ref_date": "2026-10-19",
+   "entry_date": "2026-10-19"
+  },
+  "SHEL.L": {
+   "value": 1938.3908170841896,
+   "ref_date": "2026-10-19",
+   "entry_date": "2026-10-19"
+  },
+  "WMT": {
+   "value": 1938.3908170841896,
+   "ref_date": "2026-10-19",
+   "entry_date": "2026-10-19"
   }
  },
  "trades": [
@@ -64,6 +69,70 @@
    "amount": 1980.0,
    "cost": 0.99,
    "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-10-19",
+   "ticker": "8035.T",
+   "side": "VENDI",
+   "amount": 1977.13,
+   "cost": 0.99,
+   "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-10-19",
+   "ticker": "9983.T",
+   "side": "COMPRA",
+   "amount": 24.48,
+   "cost": 0.01,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-10-19",
+   "ticker": "AMD",
+   "side": "VENDI",
+   "amount": 1894.85,
+   "cost": 0.95,
+   "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-10-19",
+   "ticker": "COST",
+   "side": "VENDI",
+   "amount": 2015.47,
+   "cost": 1.01,
+   "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-10-19",
+   "ticker": "INFY",
+   "side": "COMPRA",
+   "amount": 1938.39,
+   "cost": 0.97,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-10-19",
+   "ticker": "SHEL.L",
+   "side": "COMPRA",
+   "amount": 1938.39,
+   "cost": 0.97,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-10-19",
+   "ticker": "SHOP.TO",
+   "side": "COMPRA",
+   "amount": 44.95,
+   "cost": 0.02,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-10-19",
+   "ticker": "WMT",
+   "side": "COMPRA",
+   "amount": 1938.39,
+   "cost": 0.97,
+   "why": "rotazione settimanale: entra in top-5"
   }
  ],
  "snapshots": [
@@ -78,9 +147,15 @@
    "equity": 9828.47,
    "spy": 9889.35,
    "ew": 10005.75
+  },
+  {
+   "date": "2026-10-20",
+   "equity": 9783.97,
+   "spy": 9931.2,
+   "ew": 10012.33
   }
  ],
- "last_rebalance_week": "2026-10-12",
+ "last_rebalance_week": "2026-10-19",
  "start_date": "2026-10-15",
  "peak": 10000.0,
  "halted": false,
