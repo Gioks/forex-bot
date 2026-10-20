@@ -168,7 +168,7 @@
    "cash": 128.2051282051282,
    "pos": 0.0,
    "in": false,
-   "want": 0
+   "want": 1
   },
   "CNQ.TO": {
    "cash": 128.2051282051282,
@@ -195,9 +195,9 @@
    "want": 0
   },
   "CSL.AX": {
-   "cash": 128.2051282051282,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 127.16510539871311,
+   "in": true,
    "want": 1
   },
   "CVX": {
@@ -471,9 +471,18 @@
    "want": 0
   }
  },
- "last_date": "2026-10-20",
+ "last_date": "2026-10-21",
  "start_date": "2026-10-20",
- "trades": [],
+ "trades": [
+  {
+   "date": "2026-10-21",
+   "ticker": "CSL.AX",
+   "side": "COMPRA",
+   "amount": 128.14,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
+  }
+ ],
  "snapshots": [
   {
    "date": "2026-10-20",
@@ -481,6 +490,13 @@
    "spy": 10000.0,
    "ew": 10000.0,
    "invested": 0
+  },
+  {
+   "date": "2026-10-21",
+   "equity": 9998.96,
+   "spy": NaN,
+   "ew": 9990.46,
+   "invested": 1
   }
  ],
  "p0": {
