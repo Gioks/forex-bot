@@ -43,6 +43,7 @@ jobs:
               .venv/bin/python stock_account.py init --cash 10000 --variant $v
             fi
           done
+          [ -f data/candle_account.json ] || .venv/bin/python candle_account.py init --cash 10000
 
       - name: Aggiorna il conto
         working-directory: repo
@@ -51,13 +52,19 @@ jobs:
           .venv/bin/python stock_account.py update --variant trend || echo "sfidante trend non aggiornato"
           .venv/bin/python stock_account.py update --variant riskw || echo "sfidante riskw non aggiornato"
           .venv/bin/python stock_account.py update --variant nostop || echo "riferimento nostop non aggiornato"
+          .venv/bin/python candle_account.py update || echo "conto tre candele non aggiornato"
+
+      - name: Resoconto serale
+        working-directory: repo
+        run: |
+          .venv/bin/python sera_report.py || echo "resoconto non inviato"
 
       - name: Salva lo stato
         working-directory: repo
         run: |
           git config user.name "conto-veloce-bot"
           git config user.email "conto-demo@users.noreply.github.com"
-          git add data/stock_account*.json
+          git add data/stock_account*.json data/candle_account.json
           if ! git diff --cached --quiet; then
             git commit -m "Conto veloce aggiornato $(date -u +%F)"
             for i in 1 2 3 4; do
