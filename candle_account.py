@@ -106,8 +106,11 @@ def update(state, O, C):
     tks = [t for t in C.columns if t != su.BENCH]
     idx = C.index
     notes = []
+    # si usano solo giorni gia' COMPLETI per gli USA (SPY presente): a quest'ora le borse dell'Asia/Oceania hanno gia' iniziato il giorno dopo
+    spy_last = C[su.BENCH].last_valid_index()
+    last_i = int(idx.get_loc(spy_last))
     if state["last_date"] is None:                       # primo giorno: si crea il conto e si leggono i segnali di oggi
-        i = len(idx) - 1
+        i = last_i
         valid = [t for t in tks if not np.isnan(C[t].iloc[i])]
         slot = state["start_cash"] / len(valid)
         for t in valid:
@@ -124,7 +127,7 @@ def update(state, O, C):
                      f"Segnali di acquisto pronti per domani: {sum(s['want'] for s in state['sleeves'].values())}")
         add_snapshot(state, C, i)
     else:
-        todo = [k for k in range(len(idx)) if idx[k].strftime("%Y-%m-%d") > state["last_date"]]
+        todo = [k for k in range(last_i + 1) if idx[k].strftime("%Y-%m-%d") > state["last_date"]]
     for i in todo:
         date = idx[i].strftime("%Y-%m-%d")
         for t, sl in state["sleeves"].items():
