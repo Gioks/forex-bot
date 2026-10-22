@@ -1,1 +1,50 @@
 
+name: Raccolta prezzi 5 minuti
+
+on:
+  schedule:
+    - cron: "40 7,15,22 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: raccolta-5min
+  cancel-in-progress: false
+
+jobs:
+  raccogli:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      VA_DATA_DIR: data
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Scarica il repository
+        run: |
+          git clone --branch "$GITHUB_REF_NAME" "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" repo
+
+      - name: Installa le librerie
+        working-directory: repo
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install --quiet yfinance pandas
+
+      - name: Raccogli i prezzi a 5 minuti
+        working-directory: repo
+        run: .venv/bin/python prezzi_5min.py
+
+      - name: Salva i prezzi
+        working-directory: repo
+        run: |
+          git config user.name "raccolta-5min-bot"
+          git config user.email "conto-demo@users.noreply.github.com"
+          git add data/intraday
+          if ! git diff --cached --quiet; then
+            git commit -m "Prezzi 5 minuti $(date -u +%F-%H)"
+            for i in 1 2 3 4; do
+              git pull --rebase origin "$GITHUB_REF_NAME" && git push && break
+              sleep 10
+            done
+          fi
