@@ -166,7 +166,7 @@
   },
   "CBA.AX": {
    "cash": 0.0,
-   "pos": 128.27980764553647,
+   "pos": 133.85435324147497,
    "in": true,
    "want": 1
   },
@@ -183,14 +183,14 @@
    "want": 0
   },
   "CP.TO": {
-   "cash": 128.2051282051282,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 127.65289785211833,
+   "in": true,
    "want": 1
   },
   "CRM": {
    "cash": 0.0,
-   "pos": 131.12192831223163,
+   "pos": 130.2208620209464,
    "in": true,
    "want": 1
   },
@@ -244,7 +244,7 @@
   },
   "INFY": {
    "cash": 0.0,
-   "pos": 134.12706265623788,
+   "pos": 125.30024519751713,
    "in": true,
    "want": 1
   },
@@ -255,9 +255,9 @@
    "want": 0
   },
   "JNJ": {
-   "cash": 128.2051282051282,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 127.1721133898929,
+   "in": true,
    "want": 1
   },
   "JPM": {
@@ -273,14 +273,14 @@
    "want": 0
   },
   "LLY": {
-   "cash": 128.2051282051282,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 125.12556320064024,
+   "in": true,
    "want": 1
   },
   "MA": {
    "cash": 0.0,
-   "pos": 129.94074951887274,
+   "pos": 127.9686761355249,
    "in": true,
    "want": 1
   },
@@ -312,7 +312,7 @@
    "cash": 128.2051282051282,
    "pos": 0.0,
    "in": false,
-   "want": 0
+   "want": 1
   },
   "NESN.SW": {
    "cash": 0.0,
@@ -370,14 +370,14 @@
   },
   "RIO.AX": {
    "cash": 0.0,
-   "pos": 127.31936812213158,
+   "pos": 123.90554984072843,
    "in": true,
    "want": 1
   },
   "RY.TO": {
-   "cash": 128.2051282051282,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 128.09559385218475,
+   "in": true,
    "want": 1
   },
   "SAN.PA": {
@@ -411,9 +411,9 @@
    "want": 0
   },
   "TD.TO": {
-   "cash": 128.2051282051282,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 128.4871867195662,
+   "in": true,
    "want": 1
   },
   "TMO": {
@@ -424,7 +424,7 @@
   },
   "TSLA": {
    "cash": 0.0,
-   "pos": 128.32948111219113,
+   "pos": 127.5209603517261,
    "in": true,
    "want": 1
   },
@@ -448,7 +448,7 @@
   },
   "V": {
    "cash": 0.0,
-   "pos": 130.1482137016893,
+   "pos": 128.13163476859776,
    "in": true,
    "want": 1
   },
@@ -471,7 +471,7 @@
    "want": 0
   }
  },
- "last_date": "2026-10-22",
+ "last_date": "2026-10-23",
  "start_date": "2026-10-21",
  "trades": [
   {
@@ -537,6 +537,46 @@
    "amount": 128.14,
    "cost": 0.06,
    "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-10-23",
+   "ticker": "CP.TO",
+   "side": "COMPRA",
+   "amount": 128.14,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-10-23",
+   "ticker": "JNJ",
+   "side": "COMPRA",
+   "amount": 128.14,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-10-23",
+   "ticker": "LLY",
+   "side": "COMPRA",
+   "amount": 128.14,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-10-23",
+   "ticker": "RY.TO",
+   "side": "COMPRA",
+   "amount": 128.14,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-10-23",
+   "ticker": "TD.TO",
+   "side": "COMPRA",
+   "amount": 128.14,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
   }
  ],
  "snapshots": [
@@ -553,6 +593,13 @@
    "spy": 9873.09,
    "ew": 9921.49,
    "invested": 8
+  },
+  {
+   "date": "2026-10-23",
+   "equity": 9993.96,
+   "spy": 9821.52,
+   "ew": 9881.28,
+   "invested": 13
   }
  ],
  "p0": {
