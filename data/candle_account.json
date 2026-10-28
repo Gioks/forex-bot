@@ -64,7 +64,7 @@
   },
   "7203.T": {
    "cash": 0.0,
-   "pos": 128.4723855565132,
+   "pos": 126.36017032009083,
    "in": true,
    "want": 1
   },
@@ -75,9 +75,9 @@
    "want": 0
   },
   "8306.T": {
-   "cash": 128.2051282051282,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 127.27422110965635,
+   "in": true,
    "want": 1
   },
   "9983.T": {
@@ -87,9 +87,9 @@
    "want": 0
   },
   "9984.T": {
-   "cash": 128.2051282051282,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 130.42531131312828,
+   "in": true,
    "want": 1
   },
   "9988.HK": {
@@ -123,9 +123,9 @@
    "want": 0
   },
   "AMD": {
-   "cash": 128.2051282051282,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 129.46606439335488,
+   "in": true,
    "want": 1
   },
   "AMZN": {
@@ -141,9 +141,9 @@
    "want": 1
   },
   "AVGO": {
-   "cash": 128.2051282051282,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 129.27651132840958,
+   "in": true,
    "want": 1
   },
   "AZN.L": {
@@ -166,7 +166,7 @@
   },
   "CBA.AX": {
    "cash": 0.0,
-   "pos": 132.23831026872722,
+   "pos": 133.04632552810307,
    "in": true,
    "want": 1
   },
@@ -184,20 +184,20 @@
   },
   "CP.TO": {
    "cash": 0.0,
-   "pos": 130.16487062102803,
+   "pos": 127.83595681630307,
    "in": true,
    "want": 1
   },
   "CRM": {
-   "cash": 0.0,
-   "pos": 126.19745926076148,
-   "in": true,
+   "cash": 124.36977013644267,
+   "pos": 0.0,
+   "in": false,
    "want": 0
   },
   "CSL.AX": {
-   "cash": 128.2051282051282,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 127.74570022983185,
+   "in": true,
    "want": 1
   },
   "CVX": {
@@ -207,9 +207,9 @@
    "want": 0
   },
   "ENB.TO": {
-   "cash": 128.2051282051282,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 127.7083966040906,
+   "in": true,
    "want": 1
   },
   "ENEL.MI": {
@@ -244,7 +244,7 @@
   },
   "INFY": {
    "cash": 0.0,
-   "pos": 122.86525339709576,
+   "pos": 122.66234305791998,
    "in": true,
    "want": 1
   },
@@ -256,7 +256,7 @@
   },
   "JNJ": {
    "cash": 0.0,
-   "pos": 129.54385256316917,
+   "pos": 130.65740881263093,
    "in": true,
    "want": 1
   },
@@ -270,18 +270,18 @@
    "cash": 128.2051282051282,
    "pos": 0.0,
    "in": false,
-   "want": 0
+   "want": 1
   },
   "LLY": {
    "cash": 0.0,
-   "pos": 125.95583679066108,
+   "pos": 126.5836964849364,
    "in": true,
    "want": 1
   },
   "MA": {
-   "cash": 0.0,
-   "pos": 125.14704469589863,
-   "in": true,
+   "cash": 124.28865518872409,
+   "pos": 0.0,
+   "in": false,
    "want": 0
   },
   "MC.PA": {
@@ -310,7 +310,7 @@
   },
   "NAB.AX": {
    "cash": 0.0,
-   "pos": 126.78789725746532,
+   "pos": 127.1969833342978,
    "in": true,
    "want": 1
   },
@@ -376,7 +376,7 @@
   },
   "RY.TO": {
    "cash": 0.0,
-   "pos": 129.77310768430905,
+   "pos": 130.20499320289272,
    "in": true,
    "want": 1
   },
@@ -412,19 +412,19 @@
   },
   "TD.TO": {
    "cash": 0.0,
-   "pos": 130.0337212208947,
+   "pos": 130.26937709280378,
    "in": true,
    "want": 1
   },
   "TMO": {
-   "cash": 128.2051282051282,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 130.422974809267,
+   "in": true,
    "want": 1
   },
   "TSLA": {
    "cash": 0.0,
-   "pos": 139.59402838336146,
+   "pos": 138.48402176130267,
    "in": true,
    "want": 1
   },
@@ -447,9 +447,9 @@
    "want": 0
   },
   "V": {
-   "cash": 0.0,
-   "pos": 126.22812114194639,
-   "in": true,
+   "cash": 124.08978466788207,
+   "pos": 0.0,
+   "in": false,
    "want": 0
   },
   "WES.AX": {
@@ -471,7 +471,7 @@
    "want": 0
   }
  },
- "last_date": "2026-10-27",
+ "last_date": "2026-10-28",
  "start_date": "2026-10-21",
  "trades": [
   {
@@ -601,6 +601,86 @@
    "amount": 125.02,
    "cost": 0.06,
    "why": "3 candele in ribasso"
+  },
+  {
+   "date": "2026-10-28",
+   "ticker": "8306.T",
+   "side": "COMPRA",
+   "amount": 128.14,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-10-28",
+   "ticker": "9984.T",
+   "side": "COMPRA",
+   "amount": 128.14,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-10-28",
+   "ticker": "AMD",
+   "side": "COMPRA",
+   "amount": 128.14,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-10-28",
+   "ticker": "AVGO",
+   "side": "COMPRA",
+   "amount": 128.14,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-10-28",
+   "ticker": "CRM",
+   "side": "VENDI",
+   "amount": 124.43,
+   "cost": 0.06,
+   "why": "3 candele in ribasso"
+  },
+  {
+   "date": "2026-10-28",
+   "ticker": "CSL.AX",
+   "side": "COMPRA",
+   "amount": 128.14,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-10-28",
+   "ticker": "ENB.TO",
+   "side": "COMPRA",
+   "amount": 128.14,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-10-28",
+   "ticker": "MA",
+   "side": "VENDI",
+   "amount": 124.35,
+   "cost": 0.06,
+   "why": "3 candele in ribasso"
+  },
+  {
+   "date": "2026-10-28",
+   "ticker": "TMO",
+   "side": "COMPRA",
+   "amount": 128.14,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-10-28",
+   "ticker": "V",
+   "side": "VENDI",
+   "amount": 124.15,
+   "cost": 0.06,
+   "why": "3 candele in ribasso"
   }
  ],
  "snapshots": [
@@ -638,6 +718,13 @@
    "spy": 9946.75,
    "ew": 9912.59,
    "invested": 14
+  },
+  {
+   "date": "2026-10-28",
+   "equity": 9999.27,
+   "spy": 9981.0,
+   "ew": 9955.04,
+   "invested": 18
   }
  ],
  "p0": {
