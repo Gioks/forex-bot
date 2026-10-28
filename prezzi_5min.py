@@ -24,8 +24,11 @@ TICKERS = [
     "BTC-USD", "ETH-USD",
     # azioni USA
     "AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "TSLA", "JPM", "XOM", "AMD", "NFLX", "BAC",
+    "AVGO", "V", "MA", "UNH", "LLY", "WMT", "COST", "HD", "PG", "JNJ", "KO", "PEP", "MRK", "ORCL", "CRM",
+    "CVX", "INTC", "BA", "DIS", "PFE", "PLTR", "COIN", "UBER",
     # azioni Europa
     "ENEL.MI", "ISP.MI", "RACE.MI", "ASML.AS", "SAP.DE", "MC.PA",
+    "SIE.DE", "ALV.DE", "OR.PA", "TTE.PA", "AIR.PA", "SAN.PA", "NESN.SW", "NOVN.SW", "ENI.MI", "UCG.MI",
 ]
 COLS = ["ticker", "ts_utc", "open", "high", "low", "close", "volume"]
 
@@ -88,16 +91,35 @@ def save(rows):
     return added
 
 
+def known_tickers():
+    seen = set()
+    if DATA_DIR.exists():
+        for p in DATA_DIR.glob("*.csv.gz"):
+            try:
+                seen |= set(pd.read_csv(p, usecols=["ticker"])["ticker"].unique())
+            except Exception:
+                pass
+    return seen
+
+
 def collect(fetch_fn=fetch):
+    new = [t for t in TICKERS if t not in known_tickers()]
+    total = 0
+    if new:                                             # strumenti mai visti: si recuperano gli ultimi 60 giorni (il massimo di Yahoo)
+        df = fetch_fn(new, "60d")
+        if df is not None and not df.empty:
+            rows = to_rows(df, new)
+            total += save(rows) if len(rows) else 0
+            print(f"Recupero storico 60 giorni: {rows['ticker'].nunique() if len(rows) else 0}/{len(new)} strumenti nuovi")
     df = fetch_fn(TICKERS)
     if df is None or df.empty:
         print("Nessun dato ricevuto da Yahoo")
-        return 0
+        return total
     rows = to_rows(df, TICKERS)
     got = rows["ticker"].nunique() if len(rows) else 0
     n = save(rows) if len(rows) else 0
     print(f"Strumenti con dati: {got}/{len(TICKERS)} | candele nuove salvate: {n}")
-    return n
+    return total + n
 
 
 if __name__ == "__main__":
