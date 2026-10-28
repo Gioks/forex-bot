@@ -23,10 +23,7 @@ TICKERS = [
     # cambi (forex)
     "EURUSD=X", "EURNZD=X", "GBPUSD=X", "USDJPY=X", "EURGBP=X", "EURJPY=X", "AUDUSD=X", "USDCHF=X",
     "USDCAD=X", "NZDUSD=X", "EURCHF=X", "GBPJPY=X",
-    #    # cambi (forex)
-    "EURUSD=X", "EURNZD=X", "GBPUSD=X", "USDJPY=X", "EURGBP=X", "EURJPY=X", "AUDUSD=X", "USDCHF=X",
-    "USDCAD=X", "NZDUSD=X", "EURCHF=X", "GBPJPY=X",
-    crypto (24 ore su 24)
+    # crypto (24 ore su 24)
     "BTC-USD", "ETH-USD",
     # azioni USA
     "AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "TSLA", "JPM", "XOM", "AMD", "NFLX", "BAC",
