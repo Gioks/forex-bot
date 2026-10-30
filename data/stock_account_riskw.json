@@ -1,13 +1,8 @@
 {
  "created": "2026-10-15 18:11",
  "start_cash": 10000.0,
- "cash": 92.12832576275105,
+ "cash": 1293.757231659008,
  "positions": {
-  "SHOP.TO": {
-   "value": 1287.1176943861637,
-   "ref_date": "2026-10-26",
-   "entry_date": "2026-10-15"
-  },
   "INFY": {
    "value": 1969.4823567997437,
    "ref_date": "2026-10-26",
@@ -197,6 +192,14 @@
    "amount": 2107.67,
    "cost": 1.05,
    "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-10-30",
+   "ticker": "SHOP.TO",
+   "side": "VENDI",
+   "amount": 1202.23,
+   "cost": 0.6,
+   "why": "stop-loss: -12.7% dal prezzo di acquisto"
   }
  ],
  "snapshots": [
@@ -256,14 +259,17 @@
   },
   {
    "date": "2026-10-30",
-   "equity": 9863.24,
-   "spy": 9968.51,
-   "ew": 10040.58
+   "equity": 9889.9,
+   "spy": 9791.78,
+   "ew": 10039.96
   }
  ],
  "last_rebalance_week": "2026-10-26",
  "start_date": "2026-10-15",
  "peak": 10016.655536366685,
  "halted": false,
- "halt_reason": ""
+ "halt_reason": "",
+ "cooldown": {
+  "SHOP.TO": "2026-11-27"
+ }
 }
