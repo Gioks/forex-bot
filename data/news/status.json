@@ -1,5 +1,5 @@
 {
- "run_utc": "2026-10-31T09:33:51+00:00",
+ "run_utc": "2026-10-31T10:30:07+00:00",
  "feeds": {
   "marketwatch_top": {
    "ok": true,
@@ -39,7 +39,7 @@
   "bbc_world": {
    "ok": true,
    "items": 36,
-   "new": 1
+   "new": 0
   },
   "cnbc_top": {
    "ok": true,
@@ -48,15 +48,15 @@
   },
   "guardian_business": {
    "ok": true,
-   "items": 39,
-   "new": 0
+   "items": 40,
+   "new": 3
   },
   "nyt_business": {
    "ok": true,
    "items": 50,
-   "new": 4
+   "new": 0
   }
  },
- "new_total": 5,
+ "new_total": 3,
  "feeds_ok": 11
 }
