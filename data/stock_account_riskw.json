@@ -1,27 +1,32 @@
 {
  "created": "2026-10-15 18:11",
  "start_cash": 10000.0,
- "cash": 1293.757231659008,
+ "cash": 88.086900048482,
  "positions": {
-  "INFY": {
-   "value": 1969.4823567997437,
-   "ref_date": "2026-10-26",
-   "entry_date": "2026-10-19"
+  "AZN.L": {
+   "value": 1865.0081017466794,
+   "ref_date": "2026-11-02",
+   "entry_date": "2026-11-02"
   },
-  "6098.T": {
-   "value": 1269.829448174925,
-   "ref_date": "2026-10-26",
-   "entry_date": "2026-10-26"
+  "HD": {
+   "value": 2027.885648863378,
+   "ref_date": "2026-11-02",
+   "entry_date": "2026-11-02"
   },
-  "CNQ.TO": {
-   "value": 2852.9719860044524,
-   "ref_date": "2026-10-26",
-   "entry_date": "2026-10-26"
+  "LLY": {
+   "value": 1664.2119511824328,
+   "ref_date": "2026-11-02",
+   "entry_date": "2026-11-02"
   },
-  "SAP.DE": {
-   "value": 2469.444182093548,
-   "ref_date": "2026-10-26",
-   "entry_date": "2026-10-26"
+  "OR.PA": {
+   "value": 2236.9291479444055,
+   "ref_date": "2026-11-02",
+   "entry_date": "2026-11-02"
+  },
+  "WMT": {
+   "value": 1819.026917984133,
+   "ref_date": "2026-11-02",
+   "entry_date": "2026-11-02"
   }
  },
  "trades": [
@@ -200,6 +205,78 @@
    "amount": 1202.23,
    "cost": 0.6,
    "why": "stop-loss: -12.7% dal prezzo di acquisto"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "6098.T",
+   "side": "VENDI",
+   "amount": 1197.52,
+   "cost": 0.6,
+   "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "AZN.L",
+   "side": "COMPRA",
+   "amount": 1865.01,
+   "cost": 0.93,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "CNQ.TO",
+   "side": "VENDI",
+   "amount": 2775.74,
+   "cost": 1.39,
+   "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "HD",
+   "side": "COMPRA",
+   "amount": 2027.89,
+   "cost": 1.01,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "INFY",
+   "side": "VENDI",
+   "amount": 1985.33,
+   "cost": 0.99,
+   "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "LLY",
+   "side": "COMPRA",
+   "amount": 1664.21,
+   "cost": 0.83,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "OR.PA",
+   "side": "COMPRA",
+   "amount": 2236.93,
+   "cost": 1.12,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "SAP.DE",
+   "side": "VENDI",
+   "amount": 2457.81,
+   "cost": 1.23,
+   "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "WMT",
+   "side": "COMPRA",
+   "amount": 1819.03,
+   "cost": 0.91,
+   "why": "rotazione settimanale: entra in top-5"
   }
  ],
  "snapshots": [
@@ -262,9 +339,15 @@
    "equity": 9889.9,
    "spy": 9791.78,
    "ew": 10039.96
+  },
+  {
+   "date": "2026-11-03",
+   "equity": 9701.15,
+   "spy": 9744.88,
+   "ew": 10010.95
   }
  ],
- "last_rebalance_week": "2026-10-26",
+ "last_rebalance_week": "2026-11-02",
  "start_date": "2026-10-15",
  "peak": 10016.655536366685,
  "halted": false,
