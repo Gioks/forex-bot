@@ -1,27 +1,27 @@
 {
  "created": "2026-10-14 23:24",
  "start_cash": 10000.0,
- "cash": 95.05000000000086,
+ "cash": 90.15578511528616,
  "positions": {
   "EWT": {
-   "value": 1980.0,
-   "ref_date": "2026-10-14"
+   "value": 1790.9026132571703,
+   "ref_date": "2026-11-02"
   },
   "EWY": {
-   "value": 1980.0,
-   "ref_date": "2026-10-14"
+   "value": 1790.9026132571703,
+   "ref_date": "2026-11-02"
   },
   "EWZ": {
-   "value": 1980.0,
-   "ref_date": "2026-10-14"
+   "value": 1790.9026132571703,
+   "ref_date": "2026-11-02"
   },
   "XLE": {
-   "value": 1980.0,
-   "ref_date": "2026-10-14"
+   "value": 1790.9026132571703,
+   "ref_date": "2026-11-02"
   },
   "XLK": {
-   "value": 1980.0,
-   "ref_date": "2026-10-14"
+   "value": 1790.9026132571703,
+   "ref_date": "2026-11-02"
   }
  },
  "trades": [
@@ -64,6 +64,46 @@
    "amount": 1980.0,
    "cost": 0.99,
    "why": "rotazione mensile: entra in top-5"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "EWT",
+   "side": "VENDI",
+   "amount": 5.63,
+   "cost": 0.0,
+   "why": "rotazione mensile: esce dai migliori"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "EWY",
+   "side": "VENDI",
+   "amount": 87.39,
+   "cost": 0.04,
+   "why": "rotazione mensile: esce dai migliori"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "EWZ",
+   "side": "COMPRA",
+   "amount": 296.14,
+   "cost": 0.15,
+   "why": "rotazione mensile: entra in top-5"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "XLE",
+   "side": "VENDI",
+   "amount": 177.97,
+   "cost": 0.09,
+   "why": "rotazione mensile: esce dai migliori"
+  },
+  {
+   "date": "2026-11-02",
+   "ticker": "XLK",
+   "side": "VENDI",
+   "amount": 20.55,
+   "cost": 0.01,
+   "why": "rotazione mensile: esce dai migliori"
   }
  ],
  "snapshots": [
@@ -144,9 +184,15 @@
    "equity": 9332.31,
    "spy": 9819.65,
    "ew": 9973.39
+  },
+  {
+   "date": "2026-11-02",
+   "equity": 9044.67,
+   "spy": 9772.61,
+   "ew": 9986.42
   }
  ],
- "last_rebalance_month": "2026-10",
+ "last_rebalance_month": "2026-11",
  "start_date": "2026-10-14",
  "peak": 10000.0,
  "halted": false,
