@@ -1,5 +1,5 @@
 {
- "run_utc": "2026-11-07T00:04:42+00:00",
+ "run_utc": "2026-11-07T01:32:38+00:00",
  "feeds": {
   "marketwatch_top": {
    "ok": true,
@@ -54,9 +54,9 @@
   "nyt_business": {
    "ok": true,
    "items": 49,
-   "new": 1
+   "new": 0
   }
  },
- "new_total": 1,
+ "new_total": 0,
  "feeds_ok": 11
 }
