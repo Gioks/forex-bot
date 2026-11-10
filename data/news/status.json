@@ -1,10 +1,10 @@
 {
- "run_utc": "2026-11-10T18:43:12+00:00",
+ "run_utc": "2026-11-10T19:47:07+00:00",
  "feeds": {
   "marketwatch_top": {
    "ok": true,
    "items": 10,
-   "new": 2
+   "new": 3
   },
   "marketwatch_pulse": {
    "ok": true,
@@ -39,7 +39,7 @@
   "bbc_world": {
    "ok": true,
    "items": 32,
-   "new": 4
+   "new": 1
   },
   "cnbc_top": {
    "ok": true,
@@ -49,14 +49,14 @@
   "guardian_business": {
    "ok": true,
    "items": 40,
-   "new": 1
+   "new": 2
   },
   "nyt_business": {
    "ok": true,
    "items": 48,
-   "new": 2
+   "new": 1
   }
  },
- "new_total": 11,
+ "new_total": 9,
  "feeds_ok": 11
 }
