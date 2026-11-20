@@ -16,14 +16,14 @@
   },
   "0939.HK": {
    "cash": 0.0,
-   "pos": 127.89768087932903,
+   "pos": 127.53259827579076,
    "in": true,
    "want": 1
   },
   "1299.HK": {
-   "cash": 132.79561813262058,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 131.25255637631324,
+   "in": true,
    "want": 1
   },
   "1810.HK": {
@@ -46,7 +46,7 @@
   },
   "6098.T": {
    "cash": 0.0,
-   "pos": 129.95158588451912,
+   "pos": 131.6512654269382,
    "in": true,
    "want": 1
   },
@@ -54,19 +54,19 @@
    "cash": 128.2051282051282,
    "pos": 0.0,
    "in": false,
-   "want": 0
+   "want": 1
   },
   "6861.T": {
    "cash": 128.2051282051282,
    "pos": 0.0,
    "in": false,
-   "want": 0
+   "want": 1
   },
   "7203.T": {
    "cash": 0.0,
-   "pos": 141.4149628895801,
+   "pos": 140.87282354497245,
    "in": true,
-   "want": 1
+   "want": 0
   },
   "8035.T": {
    "cash": 128.2051282051282,
@@ -82,7 +82,7 @@
   },
   "9983.T": {
    "cash": 0.0,
-   "pos": 140.5472649509858,
+   "pos": 141.10579815707715,
    "in": true,
    "want": 1
   },
@@ -124,7 +124,7 @@
   },
   "AMD": {
    "cash": 0.0,
-   "pos": 118.6555926012762,
+   "pos": 109.49018755506967,
    "in": true,
    "want": 1
   },
@@ -141,9 +141,9 @@
    "want": 1
   },
   "AVGO": {
-   "cash": 112.12613088948366,
-   "pos": 0.0,
-   "in": false,
+   "cash": 0.0,
+   "pos": 107.04000049079205,
+   "in": true,
    "want": 1
   },
   "AZN.L": {
@@ -166,25 +166,25 @@
   },
   "CBA.AX": {
    "cash": 0.0,
-   "pos": 139.46971058224966,
+   "pos": 140.08184939280517,
    "in": true,
    "want": 1
   },
   "CNQ.TO": {
-   "cash": 0.0,
-   "pos": 106.1050254295732,
-   "in": true,
+   "cash": 106.78324877658069,
+   "pos": 0.0,
+   "in": false,
    "want": 0
   },
   "COST": {
    "cash": 0.0,
-   "pos": 136.27252895652845,
+   "pos": 135.9258220930504,
    "in": true,
    "want": 1
   },
   "CP.TO": {
    "cash": 0.0,
-   "pos": 135.86002718816687,
+   "pos": 133.3378900805515,
    "in": true,
    "want": 1
   },
@@ -196,20 +196,20 @@
   },
   "CSL.AX": {
    "cash": 0.0,
-   "pos": 129.22342743209015,
+   "pos": 129.52804759032628,
    "in": true,
    "want": 1
   },
   "CVX": {
-   "cash": 0.0,
-   "pos": 121.8681034428419,
-   "in": true,
+   "cash": 122.75379048702915,
+   "pos": 0.0,
+   "in": false,
    "want": 0
   },
   "ENB.TO": {
-   "cash": 0.0,
-   "pos": 121.30999355997653,
-   "in": true,
+   "cash": 120.95952174976826,
+   "pos": 0.0,
+   "in": false,
    "want": 0
   },
   "ENEL.MI": {
@@ -226,7 +226,7 @@
   },
   "HD": {
    "cash": 0.0,
-   "pos": 129.79015388844334,
+   "pos": 129.42111765410635,
    "in": true,
    "want": 1
   },
@@ -243,9 +243,9 @@
    "want": 0
   },
   "INFY": {
-   "cash": 0.0,
-   "pos": 119.51715055674511,
-   "in": true,
+   "cash": 118.44332821959382,
+   "pos": 0.0,
+   "in": false,
    "want": 0
   },
   "ISP.MI": {
@@ -268,14 +268,14 @@
   },
   "KO": {
    "cash": 0.0,
-   "pos": 131.03656597202001,
+   "pos": 128.36480389914485,
    "in": true,
    "want": 1
   },
   "LLY": {
-   "cash": 0.0,
-   "pos": 135.86400658275335,
-   "in": true,
+   "cash": 134.48304412995148,
+   "pos": 0.0,
+   "in": false,
    "want": 0
   },
   "MA": {
@@ -309,16 +309,16 @@
    "want": 0
   },
   "NAB.AX": {
-   "cash": 0.0,
-   "pos": 119.12727756099433,
-   "in": true,
+   "cash": 118.3283640566539,
+   "pos": 0.0,
+   "in": false,
    "want": 0
   },
   "NESN.SW": {
    "cash": 0.0,
-   "pos": 126.8564301939556,
+   "pos": 124.52662204759369,
    "in": true,
-   "want": 1
+   "want": 0
   },
   "NFLX": {
    "cash": 115.27594702212288,
@@ -352,13 +352,13 @@
   },
   "PEP": {
    "cash": 0.0,
-   "pos": 128.18622400213346,
+   "pos": 125.59304820993766,
    "in": true,
    "want": 1
   },
   "PG": {
    "cash": 0.0,
-   "pos": 132.55461364726474,
+   "pos": 130.6553149741322,
    "in": true,
    "want": 1
   },
@@ -460,7 +460,7 @@
   },
   "WMT": {
    "cash": 0.0,
-   "pos": 131.24282576698076,
+   "pos": 129.8825832329822,
    "in": true,
    "want": 1
   },
@@ -471,7 +471,7 @@
    "want": 0
   }
  },
- "last_date": "2026-11-18",
+ "last_date": "2026-11-19",
  "start_date": "2026-10-21",
  "trades": [
   {
@@ -1089,6 +1089,70 @@
    "amount": 129.56,
    "cost": 0.06,
    "why": "3 candele in ribasso"
+  },
+  {
+   "date": "2026-11-19",
+   "ticker": "1299.HK",
+   "side": "COMPRA",
+   "amount": 132.73,
+   "cost": 0.07,
+   "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-11-19",
+   "ticker": "AVGO",
+   "side": "COMPRA",
+   "amount": 112.07,
+   "cost": 0.06,
+   "why": "3 candele in rialzo"
+  },
+  {
+   "date": "2026-11-19",
+   "ticker": "CNQ.TO",
+   "side": "VENDI",
+   "amount": 106.84,
+   "cost": 0.05,
+   "why": "3 candele in ribasso"
+  },
+  {
+   "date": "2026-11-19",
+   "ticker": "CVX",
+   "side": "VENDI",
+   "amount": 122.82,
+   "cost": 0.06,
+   "why": "3 candele in ribasso"
+  },
+  {
+   "date": "2026-11-19",
+   "ticker": "ENB.TO",
+   "side": "VENDI",
+   "amount": 121.02,
+   "cost": 0.06,
+   "why": "3 candele in ribasso"
+  },
+  {
+   "date": "2026-11-19",
+   "ticker": "INFY",
+   "side": "VENDI",
+   "amount": 118.5,
+   "cost": 0.06,
+   "why": "3 candele in ribasso"
+  },
+  {
+   "date": "2026-11-19",
+   "ticker": "LLY",
+   "side": "VENDI",
+   "amount": 134.55,
+   "cost": 0.07,
+   "why": "3 candele in ribasso"
+  },
+  {
+   "date": "2026-11-19",
+   "ticker": "NAB.AX",
+   "side": "VENDI",
+   "amount": 118.39,
+   "cost": 0.06,
+   "why": "3 candele in ribasso"
   }
  ],
  "snapshots": [
@@ -1238,6 +1302,13 @@
    "spy": 9436.79,
    "ew": 9567.89,
    "invested": 23
+  },
+  {
+   "date": "2026-11-19",
+   "equity": 9883.45,
+   "spy": 9251.6,
+   "ew": 9387.16,
+   "invested": 19
   }
  ],
  "p0": {
