@@ -1,32 +1,32 @@
 {
  "created": "2026-10-14 23:52",
  "start_cash": 10000.0,
- "cash": 90.34364642964175,
+ "cash": 87.64664602149492,
  "positions": {
-  "HD": {
-   "value": 1902.2680409713048,
-   "ref_date": "2026-11-16",
-   "entry_date": "2026-11-02"
-  },
   "SAN.PA": {
-   "value": 1902.2680409713048,
-   "ref_date": "2026-11-16",
+   "value": 1845.3702542986193,
+   "ref_date": "2026-11-23",
    "entry_date": "2026-11-09"
   },
-  "AZN.L": {
-   "value": 1902.2680409713048,
-   "ref_date": "2026-11-16",
-   "entry_date": "2026-11-16"
-  },
   "COST": {
-   "value": 1902.2680409713048,
-   "ref_date": "2026-11-16",
+   "value": 1845.3702542986193,
+   "ref_date": "2026-11-23",
    "entry_date": "2026-11-16"
   },
-  "LLY": {
-   "value": 1902.2680409713048,
-   "ref_date": "2026-11-16",
-   "entry_date": "2026-11-16"
+  "0939.HK": {
+   "value": 1845.3702542986193,
+   "ref_date": "2026-11-23",
+   "entry_date": "2026-11-23"
+  },
+  "9983.T": {
+   "value": 1845.3702542986193,
+   "ref_date": "2026-11-23",
+   "entry_date": "2026-11-23"
+  },
+  "WMT": {
+   "value": 1845.3702542986193,
+   "ref_date": "2026-11-23",
+   "entry_date": "2026-11-23"
   }
  },
  "trades": [
@@ -405,6 +405,70 @@
    "amount": 51.94,
    "cost": 0.03,
    "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "0939.HK",
+   "side": "COMPRA",
+   "amount": 1845.37,
+   "cost": 0.92,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "9983.T",
+   "side": "COMPRA",
+   "amount": 1845.37,
+   "cost": 0.92,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "AZN.L",
+   "side": "VENDI",
+   "amount": 1817.96,
+   "cost": 0.91,
+   "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "COST",
+   "side": "VENDI",
+   "amount": 29.86,
+   "cost": 0.01,
+   "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "HD",
+   "side": "VENDI",
+   "amount": 1894.33,
+   "cost": 0.95,
+   "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "LLY",
+   "side": "VENDI",
+   "amount": 1813.15,
+   "cost": 0.91,
+   "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "SAN.PA",
+   "side": "COMPRA",
+   "amount": 16.33,
+   "cost": 0.01,
+   "why": "rotazione settimanale: entra in top-5"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "WMT",
+   "side": "COMPRA",
+   "amount": 1845.37,
+   "cost": 0.92,
+   "why": "rotazione settimanale: entra in top-5"
   }
  ],
  "snapshots": [
@@ -539,9 +603,15 @@
    "equity": 9226.65,
    "spy": 8937.79,
    "ew": 9499.29
+  },
+  {
+   "date": "2026-11-24",
+   "equity": 9358.93,
+   "spy": 9358.63,
+   "ew": 9627.51
   }
  ],
- "last_rebalance_week": "2026-11-16",
+ "last_rebalance_week": "2026-11-23",
  "start_date": "2026-10-15",
  "peak": 10000.0,
  "halted": false,

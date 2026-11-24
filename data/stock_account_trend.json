@@ -1,34 +1,8 @@
 {
  "created": "2026-10-15 18:11",
  "start_cash": 10000.0,
- "cash": 90.34364642964175,
- "positions": {
-  "HD": {
-   "value": 1902.2680409713048,
-   "ref_date": "2026-11-16",
-   "entry_date": "2026-11-02"
-  },
-  "SAN.PA": {
-   "value": 1902.2680409713048,
-   "ref_date": "2026-11-16",
-   "entry_date": "2026-11-09"
-  },
-  "AZN.L": {
-   "value": 1902.2680409713048,
-   "ref_date": "2026-11-16",
-   "entry_date": "2026-11-16"
-  },
-  "COST": {
-   "value": 1902.2680409713048,
-   "ref_date": "2026-11-16",
-   "entry_date": "2026-11-16"
-  },
-  "LLY": {
-   "value": 1902.2680409713048,
-   "ref_date": "2026-11-16",
-   "entry_date": "2026-11-16"
-  }
- },
+ "cash": 9315.436935315489,
+ "positions": {},
  "trades": [
   {
    "date": "2026-10-15",
@@ -405,6 +379,46 @@
    "amount": 51.94,
    "cost": 0.03,
    "why": "rotazione settimanale: esce dai migliori"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "HD",
+   "side": "VENDI",
+   "amount": 1894.33,
+   "cost": 0.95,
+   "why": "filtro di tendenza: S&P 500 sotto la media a 200 giorni"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "SAN.PA",
+   "side": "VENDI",
+   "amount": 1829.04,
+   "cost": 0.91,
+   "why": "filtro di tendenza: S&P 500 sotto la media a 200 giorni"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "AZN.L",
+   "side": "VENDI",
+   "amount": 1817.96,
+   "cost": 0.91,
+   "why": "filtro di tendenza: S&P 500 sotto la media a 200 giorni"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "COST",
+   "side": "VENDI",
+   "amount": 1875.23,
+   "cost": 0.94,
+   "why": "filtro di tendenza: S&P 500 sotto la media a 200 giorni"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "LLY",
+   "side": "VENDI",
+   "amount": 1813.15,
+   "cost": 0.91,
+   "why": "filtro di tendenza: S&P 500 sotto la media a 200 giorni"
   }
  ],
  "snapshots": [
@@ -539,9 +553,15 @@
    "equity": 9226.65,
    "spy": 8937.79,
    "ew": 9499.29
+  },
+  {
+   "date": "2026-11-24",
+   "equity": 9315.44,
+   "spy": 9358.63,
+   "ew": 9627.36
   }
  ],
- "last_rebalance_week": "2026-11-16",
+ "last_rebalance_week": "2026-11-23",
  "start_date": "2026-10-15",
  "peak": 10000.0,
  "halted": false,
