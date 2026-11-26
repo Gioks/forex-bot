@@ -19,3 +19,5 @@
 {"time": "2026-11-18T02:59:29+00:00", "ticker": "^GSPTSE", "motivo_ia": "IA non configurata (manca ANTHROPIC_API_KEY)", "titoli": [], "prezzo_yahoo": 35315.30078125, "azione": "aperta (sim)", "nozionale": 7315.78, "stop": 33614.288135939896}
 {"time": "2026-11-21T02:38:35+00:00", "ticker": "^GSPTSE", "azione": "chiusa (sim)", "profitto": -443.23, "motivo": "stop di emergenza"}
 {"time": "2026-11-24T05:24:06+00:00", "ticker": "^AXJO", "azione": "chiusa (sim)", "profitto": -184.46, "motivo": "chiusura sopra la media a 5 giorni"}
+{"time": "2026-11-26T03:40:51+00:00", "ticker": "^GDAXI", "azione": "chiusa (sim)", "profitto": -365.08, "motivo": "stop di emergenza"}
+{"time": "2026-11-26T03:40:52+00:00", "ticker": "^STOXX50E", "azione": "chiusa (sim)", "profitto": -375.02, "motivo": "stop di emergenza"}
