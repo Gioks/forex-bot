@@ -21,3 +21,4 @@
 {"time": "2026-11-24T05:24:06+00:00", "ticker": "^AXJO", "azione": "chiusa (sim)", "profitto": -184.46, "motivo": "chiusura sopra la media a 5 giorni"}
 {"time": "2026-11-26T03:40:51+00:00", "ticker": "^GDAXI", "azione": "chiusa (sim)", "profitto": -365.08, "motivo": "stop di emergenza"}
 {"time": "2026-11-26T03:40:52+00:00", "ticker": "^STOXX50E", "azione": "chiusa (sim)", "profitto": -375.02, "motivo": "stop di emergenza"}
+{"time": "2026-11-27T03:42:20+00:00", "ticker": "^FCHI", "azione": "chiusa (sim)", "profitto": -115.21, "motivo": "chiusura sopra la media a 5 giorni"}
